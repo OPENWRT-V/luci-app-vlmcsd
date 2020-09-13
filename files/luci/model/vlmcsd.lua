@@ -46,7 +46,7 @@ function enable.write(self, section, value)
 		luci.sys.call("/etc/init.d/vlmcsd disable >/dev/null")
 		luci.sys.call("/etc/init.d/dnsmasq restart >/dev/null")
 	end
-	Flag.write(self, section, value)
+	-- Flag.write(self, section, value)
 end
 
 function autoactivate.write(self, section, value)
@@ -56,7 +56,7 @@ function autoactivate.write(self, section, value)
 	else
 		luci.sys.call("sed -i '/srv-host=_vlmcs._tcp.lan/d' /etc/dnsmasq.conf")
 	end
-	Flag.write(self, section, value)
+	-- Flag.write(self, section, value)
 end
 
 return m
